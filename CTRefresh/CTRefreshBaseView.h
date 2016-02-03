@@ -71,7 +71,7 @@ typedef void (^RefreshStateChangeBlock)(CTRefreshBaseView *refreshView, CTRefres
 
 
 // 设置要显示的父控件
-@property (nonatomic, assign) UIScrollView *_scrollView;
+@property (nonatomic, retain) UIScrollView *_scrollView;
 
 // 内部的控件
 @property (nonatomic, retain) UILabel *_lastUpdateTimeLabel;

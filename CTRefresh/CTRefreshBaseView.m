@@ -144,10 +144,12 @@
             // 移除之前的监听器
             [_scrollView removeObserver:self forKeyPath:CTRefreshContentOffset context:nil];
             [self removeFromSuperview];
+            [_scrollView release];
         }
         _scrollView = scrollView;
         if(_scrollView)
         {
+            [_scrollView retain];
             // 监听contentOffset
             [_scrollView addObserver:self forKeyPath:CTRefreshContentOffset options:NSKeyValueObservingOptionNew context:nil];
             [_scrollView addSubview:self];
